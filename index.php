@@ -1,5 +1,5 @@
 <?php
-  $new_url = $_REQUEST['url'];
+  $new_url = str_replace ('url=', '', substr ($_SERVER['REQUEST_URI'], strpos ($_SERVER['REQUEST_URI'], '?') + 1));
 
   // Get cURL resource
   $curl = curl_init();
